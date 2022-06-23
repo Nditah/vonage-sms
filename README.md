@@ -59,9 +59,9 @@ Add "type": "module" to your package.json file to be able to use import statemen
 
 ## Step 2: Create two files
 
-1. lib.js: a library file for the `sendSms` function that initializes a Vonage instance with your API credentials
-2. index.js: the main (entry) point for your application.
+`lib.js` and `index.js` as shown below:
 
+1. `lib.js`: a library file for the `sendSms` function that initializes a Vonage instance with your API credentials
 
 ```js
 // lib.js
@@ -99,7 +99,10 @@ export const sendSms = (recipient, message) => {
 };
 ```
 
+2. `index.js`: the main (entry) point for your application.
+
 ```js
+// index.js
 import express from "express";
 import 'dotenv/config'
 import { sendSms } from "./lib.js";
@@ -149,28 +152,32 @@ VONAGE_API_SECRET=P1Qxyz000000
 - Go to the `Dashboard`
 - Click `Number`, then Click `Your Numbers`
 
-![vonage-your-number](vonage-your-number.png)
+
+![Vonage Your Phone Number](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bfzqagaanpktwe8ewqyl.png)
+
+<!--
+![vonage-your-number](https://github.com/Nditah/vonage-sms/blob/main/vonage-your-number.png) -->
 
 There, you can manage your virtual phone numbers and configure their settings.
 *However*, for newly signup users, you can only use test numbers because you can only buy more numbers after upgrading to a paid account.
 
 ### To get Test Numbers, click [here](https://dashboard.nexmo.com/test-numbers)
 
-![vonage-test-number](vonage-test-number.png)
+![Vonage Test Phone Number](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0apqxo6rls1vchbpckvh.png)
 
 Until you upgrade your account by making your first payment, you will only be able to send messages to these numbers. 
 
-Add one or more phone numbers at your dispossable. Vonage will send you a verification code either via SMS or voice message.
+Add one or more phone numbers at your disposable. Vonage will send you a verification code either via SMS or voice message.
 
 
 ## Step 5: Finally, run your nodejs express application
 
-Open Postman, Insomnia, or any http client and post to your server
+Open Postman, Insomnia, or any other http client and post to your server
 
 [http://localhost:3000/send](http://localhost:3000/send)
 
 
-#### POST Request:
+### POST Request:
 
 ```json
 {
@@ -179,7 +186,7 @@ Open Postman, Insomnia, or any http client and post to your server
 }
 ```
 
-#### POST Response:
+### POST Response:
 
 ```json
 {
@@ -204,6 +211,4 @@ If you receive the error message
 
 `Non-Whitelisted Destination. Your Vonage account is still in demo mode. While in demo mode you must add target numbers to your whitelisted destination list.`
 
-Then know that you need to verify if the reipient phone number is registered as a test-phone number as stated in step 4.
-
-
+Then know that you need to verify if the recipient phone number is registered as a test-phone number as stated in step 4.
