@@ -1,6 +1,6 @@
 ## Send SMS Messages with Node.js using the Vonage API
 
-[Github Repo]()
+[Clone the Source Code on Github](https://github.com/Nditah/vonage-sms)
 
 Vonage is an American telecommunications company headquartered in New Jersey.
 
@@ -130,6 +130,8 @@ app.listen(PORT, () => {
 
 
 ## Step 3: get and Set your Vonage API Credentials
+
+Next, you will need a [Vonage API account](https://dashboard.nexmo.com/sign-up). If you don’t have one already, you can sign up and start building with about 2$ free credit.
 
 Find your API key and secret in your Vonage [Dashboard](https://dashboard.nexmo.com/) and assign them to enviromental variables in `.env`
  
